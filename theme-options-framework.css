@@ -1,0 +1,126 @@
+/* Speed Flare Theme Option Framework
+ * 
+ * Copyright (c) 2024 Nerghum
+ * Email: nerghum@gmail.com
+ * Website: https://nerghum.com
+ *
+ * This is a lightweight and fast WordPress custom theme admin panel framework.
+ * It is so lite you don't have to use any third-party heavy plugins that make your theme load slow.
+ */
+
+/* Container for the theme options framework */
+#sf-theme-options-framework {
+  display: flex;
+  min-height: 350px;
+  position: relative;
+}
+
+/* Vertical menu styles */
+.sf-vertical-menu {
+  width: 25%;
+  border-right: 1px solid #ddd;
+  background-color: #303030;
+}
+
+.sf-vertical-menu .sf-menu-item {
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-decoration: none;
+  color: #fff;
+}
+
+.sf-vertical-menu .sf-menu-item.active {
+  background: #004025; /* Background for the active menu item */
+}
+
+/* Menu content area styles */
+.sf-menu-content {
+  width: 75%;
+  padding: 20px;
+  background: #ccc;
+}
+
+/* Menu sections are initially hidden */
+.sf-menu-section {
+  display: none;
+}
+
+/* Form group styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  /* Base styles for input elements */
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"] {
+  width: 100%; /* Full width for text and URL inputs */
+  max-width: 600px; /* Maximum width for inputs */
+}
+
+/* Save options button styles */
+#sf-save-options {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 5px 20px;
+}
+
+/* Styles for the true/false switch (radio slider) */
+.sf_switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.sf_switch input {
+  opacity: 0; /* Hide the checkbox */
+  width: 0;
+  height: 0;
+}
+
+.sf_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: red; /* Default background color */
+  transition: .4s; /* Smooth transition for slider movement */
+  border-radius: 34px; /* Round corners for slider */
+}
+
+.sf_slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white; /* Slider knob color */
+  transition: .4s; /* Smooth transition for knob movement */
+  border-radius: 50%; /* Circular knob */
+}
+
+input:checked + .sf_slider {
+  background-color: green; /* Background color when checked */
+}
+
+input:focus + .sf_slider {
+  box-shadow: 0 0 1px green; /* Shadow effect when focused */
+}
+
+input:checked + .sf_slider:before {
+  transform: translateX(26px); /* Move knob to the right when checked */
+}
